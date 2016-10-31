@@ -2,44 +2,6 @@ language: cpp
 
 matrix:
   include:
-  - compiler: clang
-    env: COMPILER=clang++ SKIP_CHECK=true
-  - compiler: clang
-    env: COMPILER=clang++
-    addons:
-      apt:
-        packages:
-        - libcppunit-dev
-  - compiler: clang
-    env: COMPILER=clang++-3.6
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.6
-        packages:
-        - clang-3.6
-        - libcppunit-dev
-  - compiler: clang
-    env: COMPILER=clang++-3.7
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.7
-        packages:
-        - clang-3.7
-        - libcppunit-dev
-  - compiler: clang
-    env: COMPILER=clang++-3.8
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
-        - llvm-toolchain-precise-3.8
-        packages:
-        - clang-3.8
-        - libcppunit-dev
   - compiler: gcc
     env: COMPILER=g++-4.7 SKIP_CHECK=true
     addons:
