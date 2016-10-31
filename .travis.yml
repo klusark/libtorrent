@@ -30,7 +30,7 @@ before_install:
   - pip install --user cpp-coveralls
 
 script:
-- ./autogen.sh && CXX="$COMPILER" CXXFLAGS="-ftest-coverage -fprofile-arcs" ./configure && make -j12
+- ./autogen.sh && CXX="$COMPILER" CXXFLAGS="-ftest-coverage -fprofile-arcs" LDFLAGS="-ftest-coverage -fprofile-arcs" ./configure && make -j12
 - if [ ! $SKIP_CHECK ]; then make -j12 check; fi
 
 after_success:
