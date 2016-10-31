@@ -65,12 +65,12 @@ matrix:
         - libcppunit-dev
 
 before_install:
-  - if [ ! $SKIP_COVERAGE ]; pip install --user cpp-coveralls
+  - if [ ! $SKIP_COVERAGE ]; then pip install --user cpp-coveralls; fi
 
 script:
-- if [ ! $SKIP_COVERAGE ]; export CXXFLAGS="-ftest-coverage -fprofile-arcs"
+- if [ ! $SKIP_COVERAGE ]; then export CXXFLAGS="-ftest-coverage -fprofile-arcs"; fi
 - ./autogen.sh && CXX="$COMPILER" ./configure && make -j12
 - if [ ! $SKIP_CHECK ]; then make -j12 check; fi
 
 after_success:
-  - if [ ! $SKIP_COVERAGE ]; coveralls --exclude test --gcov-options '\-lp' --gcov gcov-4.8
+  - if [ ! $SKIP_COVERAGE ]; then coveralls --exclude test --gcov-options '\-lp' --gcov gcov-4.8; fi
