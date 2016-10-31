@@ -3,21 +3,6 @@ language: cpp
 matrix:
   include:
   - compiler: gcc
-    env: COMPILER=g++-4.7 SKIP_CHECK=true
-    addons:
-      apt:
-        sources: ubuntu-toolchain-r-test
-        packages:
-        - g++-4.7
-  - compiler: gcc
-    env: COMPILER=g++-4.7
-    addons:
-      apt:
-        sources: ubuntu-toolchain-r-test
-        packages:
-        - g++-4.7
-        - libcppunit-dev
-  - compiler: gcc
     env: COMPILER=g++-4.8
     addons:
       apt:
@@ -25,6 +10,7 @@ matrix:
         packages:
         - g++-4.8
         - libcppunit-dev
+        - gcov-4.6
 
 before_install:
   - pip install --user cpp-coveralls
